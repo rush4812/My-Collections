@@ -4,12 +4,12 @@ import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
+import { Group } from "three";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function StarBackground(props: any) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const ref: any = useRef(null);
-  const sphere = random.inSphere(new Float32Array(5000 * 3), { radius: 1.2 });
+  const ref = useRef<Group>(null);
+  const sphere = random.inSphere(new Float32Array(5000 * 3), { radius: 1.2 }) as Float32Array;
 
   useFrame((state, delta) => {
     if (ref.current) {
