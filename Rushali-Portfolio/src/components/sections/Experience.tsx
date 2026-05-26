@@ -58,7 +58,7 @@ export default function Experience() {
           {experiences.map((exp, idx) => (
             <div 
               key={idx} 
-              className="sticky glass-card p-6 sm:p-10 md:p-14 mb-16 md:mb-32 last:mb-0 shadow-2xl transition-all border-white/10 hover:border-sky-400/30"
+              className="relative md:sticky glass-card p-6 sm:p-10 md:p-14 mb-16 md:mb-32 last:mb-0 shadow-2xl transition-all border-white/10 hover:border-sky-400/30"
               style={{ top: `calc(15vh + ${idx * 40}px)`, zIndex: idx + 1 }}
             >
               <div className="row items-start">

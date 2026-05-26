@@ -16,7 +16,7 @@
 }
 
 .col {
-  flex: 1 0 0%;
+  flex: 0 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
   width: 100%;
