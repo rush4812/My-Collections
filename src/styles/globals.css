@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import "./variables.css";
+@import "./utilities.css";
+@import "./responsive.css";
+@import "./animations.css";
+
+/* Base Styles */
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue-500);
+}
+
+/* Typography Selection */
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}

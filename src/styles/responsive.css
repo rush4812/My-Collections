@@ -1,0 +1,57 @@
+/* Media Queries (Mobile-first) */
+
+/* sm */
+@media (min-width: 576px) {
+  .heading-xl {
+    font-size: 3.75rem; /* 60px */
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  .section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  
+  .section-lg {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+  
+  .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .heading-xl {
+    font-size: 4.5rem; /* 72px */
+  }
+
+  .section-title {
+    font-size: 3rem; /* 48px */
+  }
+}
+
+/* lg */
+@media (min-width: 992px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .heading-xl {
+    font-size: 6rem; /* 96px */
+  }
+}
+
+/* xl */
+@media (min-width: 1200px) {
+  .section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* xxl */
+@media (min-width: 1400px) {
+  /* Ultra-wide screens */
+}

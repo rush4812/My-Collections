@@ -1,0 +1,37 @@
+/* Layout Utilities ONLY */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.col {
+  flex: 1 0 0%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
