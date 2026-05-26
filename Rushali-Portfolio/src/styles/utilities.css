@@ -1,3 +1,4 @@
+@layer components {
 /* Layout Utilities ONLY */
 .container {
   width: 100%;
@@ -34,4 +35,5 @@
   max-width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
+}
 }
