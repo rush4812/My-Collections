@@ -23,7 +23,7 @@ export default function Contact() {
           </h2>
           <div className="h-[2px] w-20 bg-[#009ca6] rounded-full mb-6" />
           <p className="text-[#475569] max-w-2xl text-center text-lg font-medium">
-            Ready to engineer something extraordinary? Let's connect.
+            Ready to engineer something extraordinary? Let&apos;s connect.
           </p>
         </motion.div>
 

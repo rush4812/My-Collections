@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Code2, Database, Layout, Sparkles } from "lucide-react";
+
 import Image from "next/image";
 
 export default function About() {
