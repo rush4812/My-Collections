@@ -52,7 +52,7 @@ export default function Hero() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             
-            <a href="/resume.pdf" target="_blank" className="group px-8 py-4 bg-transparent border border-[#0B253D] text-[#0B253D] rounded-md font-bold hover:bg-[#0B253D] hover:text-white transition-colors flex items-center gap-2">
+            <a href="/Rushali_Jivrajani.pdf" target="_blank" className="group px-8 py-4 bg-transparent border border-[#0B253D] text-[#0B253D] rounded-md font-bold hover:bg-[#0B253D] hover:text-white transition-colors flex items-center gap-2">
               Download CV
               <Download className="w-5 h-5" />
             </a>

@@ -55,10 +55,10 @@ export default function About() {
               Crafting Digital Architecture with Precision
             </h3>
             <p className="text-[#475569] text-lg leading-relaxed mb-6 relative z-10 font-medium">
-              I am a Software Developer with 2+ years of experience in building and maintaining production-level web applications. My strong expertise in <span className="text-[#009ca6] font-bold">React.js, Vue.js, Node.js, Express.js, and MongoDB</span> allows me to build comprehensive solutions.
+              I am a results-driven Frontend Engineer specializing in architecting high-performance, visually stunning web applications. With deep expertise in <span className="text-[#009ca6] font-bold">React.js, Next.js, and modern JavaScript ecosystems</span>, I transform complex requirements into elegant, scalable digital solutions.
             </p>
             <p className="text-[#475569] text-lg leading-relaxed mb-8 relative z-10 font-medium">
-              I am passionate about creating smooth user experiences, scalable architectures, and modern responsive interfaces that push the boundaries of the web.
+              Beyond writing clean and efficient code, I am obsessed with delivering frictionless user experiences, optimizing web performance, and integrating cutting-edge frontend technologies to drive business growth and user engagement.
             </p>
             <div className="flex gap-8 relative z-10">
               <div className="flex flex-col">
