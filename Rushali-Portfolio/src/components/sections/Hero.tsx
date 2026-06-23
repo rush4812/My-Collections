@@ -78,6 +78,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
             className="relative w-[400px] h-[400px] rounded-full overflow-hidden border-8 border-white shadow-2xl"
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
               alt="Human Placeholder (Swap with your photo)" 
