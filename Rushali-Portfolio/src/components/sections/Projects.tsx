@@ -3,18 +3,18 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ExternalLink } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+import Image from "next/image";
 
 const projects = [
-  { name: "Amanta", description: "Developed and launched the new website with responsive UI.", type: "Production Website" },
-  { name: "Calico Museum", description: "Worked on frontend development for the new interactive museum website.", type: "Web App" },
-  { name: "CUPDF", description: "Complex UI implementation and architectural improvements using Vue.js.", type: "Platform" },
-  { name: "MDI Gurgaon", description: "Website maintenance, layout fixes, and performance optimization.", type: "Educational Portal" },
-  { name: "Madhubhan Resort", description: "New website implementation and launch with immersive visuals.", type: "Hospitality" },
-  { name: "Elecon", description: "Website maintenance and responsive layout fixes for enterprise client.", type: "Corporate" },
+  { name: "Amanta", description: "Developed and launched the new website with responsive UI.", type: "Production Website", link: "https://amanta.co.in/", glow: "cyan" },
+  { name: "Calico Museum", description: "Worked on frontend development for the new interactive museum website.", type: "Web App", link: "https://www.calicomuseum.org/", glow: "teal" },
+  { name: "CUPDF", description: "Complex UI implementation and architectural improvements using Vue.js.", type: "Platform", link: "https://cupdf.org/", glow: "cyan" },
+  { name: "MDI Gurgaon", description: "Website maintenance, layout fixes, and performance optimization.", type: "Educational Portal", link: "https://www.mdi.ac.in/", glow: "teal" },
+  { name: "Madhubhan Resort", description: "New website implementation and launch with immersive visuals.", type: "Hospitality", link: "https://www.madhubhanresortandspa.com/", glow: "cyan" },
+  { name: "Elecon", description: "Website maintenance and responsive layout fixes for enterprise client.", type: "Corporate", link: "https://www.elecon.com/", glow: "teal" },
 ];
 
-function ProjectCard({ project }: { project: { name: string; description: string; type: string } }) {
+function ProjectCard({ project }: { project: { name: string; description: string; type: string; link: string; glow: string } }) { 
   const ref = useRef<HTMLDivElement>(null);
   
   const x = useMotionValue(0);
@@ -23,8 +23,8 @@ function ProjectCard({ project }: { project: { name: string; description: string
   const mouseXSpring = useSpring(x, { stiffness: 300, damping: 20 });
   const mouseYSpring = useSpring(y, { stiffness: 300, damping: 20 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["15deg", "-15deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -50,29 +50,37 @@ function ProjectCard({ project }: { project: { name: string; description: string
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className="glass-card p-6 h-full cursor-pointer group relative"
-      whileHover={{ scale: 1.05, zIndex: 10 }}
-      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+      className="bg-white rounded-3xl p-6 h-full cursor-pointer group relative border border-[#e2e8f0] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-all duration-500"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" style={{ transform: "translateZ(-10px)" }} />
-      
-      <div style={{ transform: "translateZ(30px)" }} className="relative h-[200px] mb-6 rounded-xl overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center">
-        {/* Placeholder for project image, using gradient text for now */}
-        <span className="text-3xl font-black text-white/20 uppercase tracking-widest text-center px-4 leading-tight">{project.name}</span>
+      <div style={{ transform: "translateZ(30px)" }} className="relative h-[220px] mb-8 rounded-2xl overflow-hidden shadow-inner group-hover:shadow-[0_0_20px_rgba(0,156,166,0.2)] transition-shadow duration-500">
+        <Image 
+          src="/assets/projects_abstract_3d_1782208842289.png" 
+          alt="3D Project Thumbnail" 
+          fill
+          className="object-cover group-hover:scale-110 transition-transform duration-700"
+        />
+        <div className="absolute inset-0 bg-[#0B253D]/20 group-hover:bg-transparent transition-colors duration-500" />
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/20 backdrop-blur-sm">
+          <span className="text-3xl font-black uppercase tracking-widest text-center px-4 leading-tight text-white drop-shadow-md">
+            {project.name}
+          </span>
+        </div>
       </div>
 
-      <div style={{ transform: "translateZ(40px)" }}>
-        <div className="text-xs font-semibold text-purple-400 mb-2 tracking-wider uppercase">{project.type}</div>
-        <h3 className="text-2xl font-bold text-white mb-3">{project.name}</h3>
-        <p className="text-gray-400 text-sm leading-relaxed mb-6">{project.description}</p>
+      <div style={{ transform: "translateZ(40px)" }} className="relative z-10">
+        <div className="text-xs font-bold text-[#009ca6] mb-3 tracking-widest uppercase">{project.type}</div>
+        <h3 className="text-2xl font-bold text-[#0B253D] mb-4 uppercase tracking-wider">{project.name}</h3>
+        <p className="text-[#475569] text-sm leading-relaxed mb-8 font-medium">{project.description}</p>
         
         <div className="flex gap-4">
-          <button className="flex items-center gap-2 text-sm text-white hover:text-purple-400 transition-colors">
-            <ExternalLink className="w-4 h-4" /> Live Demo
-          </button>
-          <button className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors">
-            <FaGithub className="w-4 h-4" /> Code
-          </button>
+          <a 
+            href={project.link} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center gap-2 font-bold text-sm text-[#009ca6] hover:text-[#0B253D] transition-colors group/link"
+          >
+            Learn More <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+          </a>
         </div>
       </div>
     </motion.div>
@@ -81,39 +89,36 @@ function ProjectCard({ project }: { project: { name: string; description: string
 
 export default function Projects() {
   return (
-    <section id="projects" className="pt-12 md:pt-16 pb-16 md:pb-32 px-6 md:px-12 relative overflow-hidden bg-[#030014]">
-      {/* Background Glows */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
-      
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+    <section id="projects" className="py-32 px-6 md:px-12 relative overflow-hidden bg-[#F4F7FB]">
+      {/* Abstract Background Elements */}
+      <div className="absolute top-1/4 left-0 w-[40vw] h-[40vw] bg-gradient-to-r from-[#eaf5f5] to-transparent rounded-full blur-[100px] opacity-60 -translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-[30vw] h-[30vw] bg-gradient-to-l from-[#f4f7fb] to-transparent rounded-full blur-[80px] opacity-80 translate-x-1/2 pointer-events-none" />
 
-      <div className="container relative z-10">
+      <div className="container relative z-10 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-24"
+          className="flex flex-col items-center mb-20 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="text-gradient">Projects</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
+            Our Latest Work
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            A selection of live production websites and applications I have developed and maintained.
+          <div className="h-[2px] w-20 bg-[#009ca6] rounded-full mb-6" />
+          <p className="text-[#475569] max-w-2xl text-center text-lg font-medium">
+            A selection of live production websites and applications I have engineered.
           </p>
         </motion.div>
 
-        <div className="row">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
             <motion.div
               key={project.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="col md:w-1/2 lg:w-1/3 mb-8"
+              initial={{ opacity: 0, scale: 0.9, y: 50 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
             >
               <ProjectCard project={project} />
             </motion.div>

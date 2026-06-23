@@ -2,17 +2,17 @@
 
 import { motion, Variants } from "framer-motion";
 import dynamic from "next/dynamic";
-
-const ParticleBackground = dynamic(() => import("@/components/ui/ParticleBackground"), { ssr: false });
 import { Download, ArrowRight, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+
+const InteractiveTorus = dynamic(() => import("@/components/ui/InteractiveTorus"), { ssr: false });
 
 export default function Hero() {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 2.5 }, // Wait for PageLoader
+      transition: { staggerChildren: 0.15, delayChildren: 1.5 },
     },
   };
 
@@ -22,62 +22,79 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
-      <ParticleBackground />
+    <section id="home" className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-[#e0f2fe]">
+
+      <InteractiveTorus />
       
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 container text-center flex flex-col items-center"
-      >
-        <motion.div variants={childVariants} className="inline-block mb-4 px-4 py-1.5 rounded-full glass border-white/10 text-zinc-300 text-sm font-medium">
-          Available for New Opportunities
+      <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col items-start text-left"
+        >
+          <motion.div variants={childVariants} className="inline-block mb-4 px-5 py-2 rounded-md bg-[#ffffff] text-[#009ca6] text-sm font-semibold tracking-wider shadow-sm border border-[#eaf5f5]">
+            AVAILABLE FOR HIRE
+          </motion.div>
+
+          <motion.h1 variants={childVariants} className="text-5xl sm:text-7xl lg:text-7xl font-bold tracking-tight mb-6 text-[#0B253D] leading-tight">
+            Hi, I am <br />
+            <span className="text-[#009ca6]">Rushali</span> Jivrajani
+          </motion.h1>
+
+          <motion.p variants={childVariants} className="text-[#788998] text-lg sm:text-xl max-w-lg mb-10 leading-relaxed font-medium">
+            Creative Frontend Engineer building immersive digital experiences and futuristic web applications.
+          </motion.p>
+
+          <motion.div variants={childVariants} className="flex flex-wrap items-center gap-5 mb-12">
+            <a href="#projects" className="group px-8 py-4 bg-[#009ca6] text-white rounded-md font-bold hover:bg-[#008b94] transition-colors shadow-lg shadow-[#009ca6]/30 flex items-center gap-2">
+              Explore Projects
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            
+            <a href="/resume.pdf" target="_blank" className="group px-8 py-4 bg-transparent border border-[#0B253D] text-[#0B253D] rounded-md font-bold hover:bg-[#0B253D] hover:text-white transition-colors flex items-center gap-2">
+              Download CV
+              <Download className="w-5 h-5" />
+            </a>
+          </motion.div>
+
+          <motion.div variants={childVariants} className="flex items-center gap-6">
+            <a href="https://github.com/rush4812" target="_blank" className="text-[#0B253D] hover:text-[#009ca6] transition-colors">
+              <FaGithub className="w-6 h-6" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" className="text-[#0B253D] hover:text-[#009ca6] transition-colors">
+              <FaLinkedin className="w-6 h-6" />
+            </a>
+            <a href="mailto:rushjivrajani48@gmail.com" className="text-[#0B253D] hover:text-[#009ca6] transition-colors">
+              <Mail className="w-6 h-6" />
+            </a>
+          </motion.div>
         </motion.div>
+        
+        <div className="hidden lg:flex items-center justify-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+            className="relative w-[400px] h-[400px] rounded-full overflow-hidden border-8 border-white shadow-2xl"
+          >
+            <img 
+              src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="Human Placeholder (Swap with your photo)" 
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        </div>
+      </div>
 
-        <motion.h1 variants={childVariants} className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-white">
-          Hi, I&apos;m <br className="md:hidden" />
-          <span className="text-gradient inline-block">Rushali Jivrajani</span> <span className="animate-pulse inline-block opacity-80">👋</span>
-        </motion.h1>
-
-        <motion.p variants={childVariants} className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed px-4 md:px-0">
-          I&apos;m a <span className="text-white font-semibold">React.js Specialist</span> and <span className="text-white font-semibold">Full Stack Developer</span> crafting scalable, high-performance web applications with modern technologies.
-        </motion.p>
-
-        <motion.div variants={childVariants} className="flex flex-wrap items-center justify-center gap-4 mb-12">
-          <a href="#projects" className="group relative px-8 py-3 bg-white text-black rounded-full font-medium overflow-hidden transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
-            View Projects
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-          
-          <a href="/resume.pdf" target="_blank" className="group px-8 py-3 glass rounded-full font-medium hover:bg-white/10 transition-all hover:scale-105 active:scale-95 flex items-center gap-2 border border-white/20">
-            Download Resume
-            <Download className="w-4 h-4" />
-          </a>
-        </motion.div>
-
-        <motion.div variants={childVariants} className="flex items-center gap-6">
-          <a href="https://github.com/rush4812" target="_blank" className="p-3 glass rounded-full hover:bg-white hover:text-black transition-all hover:-translate-y-1 border border-white/10">
-            <FaGithub className="w-5 h-5" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" className="p-3 glass rounded-full hover:bg-white hover:text-black transition-all hover:-translate-y-1 border border-white/10">
-            <FaLinkedin className="w-5 h-5" />
-          </a>
-          <a href="mailto:rushjivrajani48@gmail.com" className="p-3 glass rounded-full hover:bg-white hover:text-black transition-all hover:-translate-y-1 border border-white/10">
-            <Mail className="w-5 h-5" />
-          </a>
-        </motion.div>
-      </motion.div>
-
-      {/* Scroll indicator */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 4, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500"
+        transition={{ delay: 3, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#788998]"
       >
-        <span className="text-xs uppercase tracking-widest">Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-gray-500 to-transparent animate-pulse" />
+        <span className="text-[10px] uppercase tracking-[0.2em] font-bold">Scroll Down</span>
+        <div className="w-[1px] h-12 bg-gradient-to-b from-[#788998] to-transparent animate-pulse" />
       </motion.div>
     </section>
   );

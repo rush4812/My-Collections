@@ -6,29 +6,28 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 md:py-32 px-6 md:px-12 relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px] mix-blend-screen" />
-      </div>
+    <section id="contact" className="py-32 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-[#f4f7fb] to-white">
+      {/* Abstract Background Elements */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-gradient-to-tr from-[#009ca6]/5 to-[#eaf5f5]/50 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="container relative z-10">
+      <div className="container relative z-10 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="flex flex-col items-center mb-20 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Let&apos;s <span className="text-gradient">Connect</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
+            Establish Connection
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Ready to build something amazing together? Feel free to reach out for collaborations, opportunities, or just a quick hello.
+          <div className="h-[2px] w-20 bg-[#009ca6] rounded-full mb-6" />
+          <p className="text-[#475569] max-w-2xl text-center text-lg font-medium">
+            Ready to engineer something extraordinary? Let's connect.
           </p>
         </motion.div>
 
-        <div className="row items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
           
           {/* Left Contact Info */}
           <motion.div
@@ -36,42 +35,42 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="col md:w-1/2 space-y-8 mb-12 md:mb-0"
+            className="flex flex-col justify-between"
           >
-            <div className="glass-card p-8 group hover:border-purple-500/50 transition-all">
-              <h3 className="text-2xl font-bold text-white mb-8">Contact Information</h3>
+            <div>
+              <h3 className="text-3xl font-bold text-[#0B253D] mb-8 uppercase tracking-widest">Protocol Info</h3>
               
-              <div className="space-y-6">
-                <a href="mailto:rushjivrajani48@gmail.com" className="flex items-center gap-4 text-gray-400 hover:text-purple-400 transition-colors group/item">
-                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover/item:bg-purple-500/20 transition-colors">
-                    <Mail className="w-5 h-5" />
+              <div className="space-y-8">
+                <a href="mailto:rushjivrajani48@gmail.com" className="flex items-center gap-6 text-[#475569] hover:text-[#009ca6] transition-colors group/item">
+                  <div className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-md border border-white flex items-center justify-center group-hover/item:border-[#009ca6]/30 shadow-sm transition-all group-hover/item:scale-105">
+                    <Mail className="w-6 h-6 text-[#009ca6]" />
                   </div>
-                  <span className="text-lg">rushjivrajani48@gmail.com</span>
+                  <span className="text-lg font-semibold tracking-wider">rushjivrajani48@gmail.com</span>
                 </a>
                 
-                <div className="flex items-center gap-4 text-gray-400 group/item">
-                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center">
-                    <Phone className="w-5 h-5" />
+                <div className="flex items-center gap-6 text-[#475569] group/item hover:text-[#009ca6] transition-colors cursor-default">
+                  <div className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-md border border-white flex items-center justify-center group-hover/item:border-[#009ca6]/30 shadow-sm transition-all group-hover/item:scale-105">
+                    <Phone className="w-6 h-6 text-[#009ca6]" />
                   </div>
-                  <span className="text-lg">+91 90995 38086</span>
+                  <span className="text-lg font-semibold tracking-wider">+91 90995 38086</span>
                 </div>
                 
-                <div className="flex items-center gap-4 text-gray-400 group/item">
-                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center">
-                    <MapPin className="w-5 h-5" />
+                <div className="flex items-center gap-6 text-[#475569] group/item hover:text-[#009ca6] transition-colors cursor-default">
+                  <div className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-md border border-white flex items-center justify-center group-hover/item:border-[#009ca6]/30 shadow-sm transition-all group-hover/item:scale-105">
+                    <MapPin className="w-6 h-6 text-[#009ca6]" />
                   </div>
-                  <span className="text-lg">Ahmedabad, Gujarat</span>
+                  <span className="text-lg font-semibold tracking-wider">Ahmedabad, Gujarat</span>
                 </div>
               </div>
+            </div>
 
-              <div className="mt-12 flex gap-4">
-                <a href="https://github.com/rush4812" target="_blank" className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 hover:text-purple-400 transition-all hover:-translate-y-1">
-                  <FaGithub className="w-5 h-5" />
-                </a>
-                <a href="https://linkedin.com" target="_blank" className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 hover:text-blue-400 transition-all hover:-translate-y-1">
-                  <FaLinkedin className="w-5 h-5" />
-                </a>
-              </div>
+            <div className="mt-16 flex gap-6">
+              <a href="https://github.com/rush4812" target="_blank" className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-md border border-white flex items-center justify-center text-[#475569] hover:text-[#0B253D] shadow-sm transition-all hover:-translate-y-2 hover:shadow-md">
+                <FaGithub className="w-7 h-7" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-md border border-white flex items-center justify-center text-[#475569] hover:text-[#0077b5] shadow-sm transition-all hover:-translate-y-2 hover:shadow-md">
+                <FaLinkedin className="w-7 h-7" />
+              </a>
             </div>
           </motion.div>
 
@@ -81,50 +80,48 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="col md:w-1/2"
           >
-            <form className="glass-card p-8 space-y-6 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <form className="bg-white/60 backdrop-blur-xl rounded-3xl p-8 md:p-12 space-y-8 relative border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all h-full flex flex-col">
               
-              <div className="relative z-10 space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">Name</label>
+              <div className="space-y-6 flex-grow relative z-10">
+                <div className="relative">
+                  <label htmlFor="name" className="block text-xs font-bold uppercase tracking-widest text-[#475569] mb-2">Identifier</label>
                   <input 
                     type="text" 
                     id="name" 
-                    className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
+                    className="w-full bg-white/50 border border-white rounded-xl px-5 py-4 text-[#0B253D] focus:outline-none focus:border-[#009ca6] focus:bg-white transition-all shadow-sm"
                     placeholder="John Doe"
                   />
                 </div>
                 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                <div className="relative">
+                  <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest text-[#475569] mb-2">Return Address</label>
                   <input 
                     type="email" 
                     id="email" 
-                    className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                    className="w-full bg-white/50 border border-white rounded-xl px-5 py-4 text-[#0B253D] focus:outline-none focus:border-[#009ca6] focus:bg-white transition-all shadow-sm"
                     placeholder="john@example.com"
                   />
                 </div>
                 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                <div className="relative">
+                  <label htmlFor="message" className="block text-xs font-bold uppercase tracking-widest text-[#475569] mb-2">Payload</label>
                   <textarea 
                     id="message" 
-                    rows={4}
-                    className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all resize-none"
-                    placeholder="Hello Rushali, I'd like to discuss..."
+                    rows={5}
+                    className="w-full bg-white/50 border border-white rounded-xl px-5 py-4 text-[#0B253D] focus:outline-none focus:border-[#009ca6] focus:bg-white transition-all resize-none shadow-sm"
+                    placeholder="Enter communication..."
                   />
                 </div>
-
-                <button 
-                  type="button" 
-                  className="w-full py-4 rounded-xl font-bold text-white bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group/btn"
-                >
-                  Send Message
-                  <Send className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                </button>
               </div>
+
+              <button 
+                type="button" 
+                className="w-full py-5 rounded-xl font-bold text-white bg-[#0B253D] hover:bg-[#009ca6] transition-all flex items-center justify-center gap-3 group/btn mt-auto relative z-10 shadow-md hover:shadow-lg"
+              >
+                Transmit
+                <Send className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" />
+              </button>
             </form>
           </motion.div>
 

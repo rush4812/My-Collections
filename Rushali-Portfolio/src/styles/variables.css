@@ -1,34 +1,33 @@
-:root {
-  /* Colors */
-  --primary: #ffffff;
-  --secondary: #a1a1aa;
-  --bg: #000000;
-  --bg-dark: #030014;
-  --text: #ffffff;
-  --muted: #94a3b8;
-  --accent: #e4e4e7;
-  
-  --purple-400: #c084fc;
-  --purple-500: #a855f7;
-  --purple-600: #9333ea;
-  --blue-500: #3b82f6;
-  --blue-600: #2563eb;
-  
-  /* Layout */
-  --container-max-width: 1200px;
-  --container-padding: 1.5rem;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  /* Border Radius */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  --radius-full: 9999px;
+@layer base {
+  :root {
+    --primary: #009ca6; /* Montor Teal */
+    --secondary: #008b94; /* Montor Teal Dark */
+    --accent: #0B253D; /* Montor Navy */
+    --background: #ffffff; /* White */
+    --surface: #f8fafc; /* Slate 50 */
+    --text-primary: #0B253D; /* Montor Navy */
+    --text-secondary: #788998; /* Montor Gray */
+    
+    /* Layout */
+    --container-max-width: 1200px;
+    --container-padding: 1.5rem;
 
-  /* Transitions */
-  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-full: 9999px;
 
-  /* Fonts */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    /* Transitions */
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Fonts */
+    --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  }
 }

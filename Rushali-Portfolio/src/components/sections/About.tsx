@@ -2,7 +2,8 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Code2, Database, Layout } from "lucide-react";
+import { Code2, Database, Layout, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -11,69 +12,64 @@ export default function About() {
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
-  const features = [
-    {
-      icon: <Layout className="w-8 h-8 text-purple-400" />,
-      title: "Frontend Engineering",
-      description: "Building immersive and responsive user interfaces with React.js, Vue.js, and modern CSS frameworks like Tailwind.",
-    },
-    {
-      icon: <Database className="w-8 h-8 text-blue-400" />,
-      title: "Backend Integration",
-      description: "Designing scalable REST APIs and handling database operations efficiently with Node.js, Express, and MongoDB.",
-    },
-    {
-      icon: <Code2 className="w-8 h-8 text-pink-400" />,
-      title: "Performance Optimization",
-      description: "Ensuring smooth user experiences through code splitting, lazy loading, and advanced animation techniques.",
-    },
-  ];
-
   return (
-    <section id="about" ref={containerRef} className="py-16 md:py-32 px-6 md:px-12 relative overflow-hidden bg-[#030014]">
-      {/* Background Glows & Grid */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] z-0" />
-      <div className="absolute top-1/4 -right-64 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
+    <section id="about" ref={containerRef} className="py-32 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-[#f8fafc] to-white">
       
-      <motion.div style={{ opacity }} className="container relative z-10">
-        <div className="row items-center">
+      <motion.div style={{ opacity }} className="container relative z-10 max-w-7xl mx-auto">
+        <div className="flex flex-col items-center mb-20 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
+            About Me
+          </h2>
+          <div className="h-[2px] w-20 bg-[#009ca6] rounded-full" />
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          {/* Left Content */}
-          <div className="col md:w-1/2 mb-12 md:mb-0">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              About <span className="text-gradient">Me</span>
-            </h2>
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              Software Developer with 2+ years of experience in building and maintaining production-level web applications. Strong expertise in React.js, Vue.js, Node.js, Express.js, and MongoDB. Passionate about creating smooth user experiences, scalable architectures, and modern responsive interfaces.
-            </p>
+          {/* Left Image Block */}
+          <motion.div style={{ y }} className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl shadow-[#009ca6]/10 border border-white/50">
+            <Image 
+              src="/assets/about_abstract_3d_1782208810311.png" 
+              alt="3D Abstract Tech Illustration" 
+              fill
+              className="object-cover"
+            />
+            {/* Glass Overlay Glow */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent mix-blend-overlay" />
+          </motion.div>
+
+          {/* Right Content Block (Glassmorphism) */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col justify-center bg-white/60 backdrop-blur-xl p-10 rounded-3xl border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden"
+          >
+            {/* Subtle glow behind text */}
+            <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#009ca6] opacity-10 blur-3xl rounded-full" />
             
-            <div className="flex gap-4">
-              <div className="glass px-6 py-4 rounded-2xl border-l-2 border-l-purple-500">
-                <div className="text-3xl font-bold text-white mb-1">2+</div>
-                <div className="text-sm text-gray-400">Years Experience</div>
+            <h3 className="text-2xl md:text-3xl font-bold text-[#0B253D] mb-6 leading-tight relative z-10">
+              Crafting Digital Architecture with Precision
+            </h3>
+            <p className="text-[#475569] text-lg leading-relaxed mb-6 relative z-10 font-medium">
+              I am a Software Developer with 2+ years of experience in building and maintaining production-level web applications. My strong expertise in <span className="text-[#009ca6] font-bold">React.js, Vue.js, Node.js, Express.js, and MongoDB</span> allows me to build comprehensive solutions.
+            </p>
+            <p className="text-[#475569] text-lg leading-relaxed mb-8 relative z-10 font-medium">
+              I am passionate about creating smooth user experiences, scalable architectures, and modern responsive interfaces that push the boundaries of the web.
+            </p>
+            <div className="flex gap-8 relative z-10">
+              <div className="flex flex-col">
+                <span className="text-4xl font-black text-[#009ca6] mb-1 drop-shadow-sm">2+</span>
+                <span className="text-sm font-bold text-[#0B253D] uppercase tracking-wider">Years Experience</span>
               </div>
-              <div className="glass px-6 py-4 rounded-2xl border-l-2 border-l-blue-500">
-                <div className="text-3xl font-bold text-white mb-1">10+</div>
-                <div className="text-sm text-gray-400">Projects Delivered</div>
+              <div className="flex flex-col">
+                <span className="text-4xl font-black text-[#009ca6] mb-1 drop-shadow-sm">10+</span>
+                <span className="text-sm font-bold text-[#0B253D] uppercase tracking-wider">Projects Delivered</span>
               </div>
             </div>
-          </div>
-
-          {/* Right Content / Cards */}
-          <motion.div style={{ y }} className="col md:w-1/2 grid gap-6">
-            {features.map((feature, idx) => (
-              <div key={idx} className="glass-card p-6 group hover:border-purple-500/50 transition-colors relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative z-10">
-                  <div className="mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
-                </div>
-              </div>
-            ))}
           </motion.div>
 
         </div>

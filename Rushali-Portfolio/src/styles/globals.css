@@ -6,12 +6,12 @@
 
 /* Base Styles */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html, body {
-  background-color: var(--bg);
-  color: var(--text);
+  background-color: var(--background);
+  color: var(--text-primary);
   overflow-x: hidden;
   cursor: none;
 }
@@ -21,18 +21,18 @@ html, body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg);
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #cbd5e1;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--blue-500);
+  background: var(--primary);
 }
 
 /* Typography Selection */
 ::selection {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  background: rgba(6, 182, 212, 0.2);
+  color: var(--text-primary);
 }

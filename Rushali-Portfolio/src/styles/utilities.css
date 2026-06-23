@@ -37,3 +37,17 @@
   padding-right: 1rem;
 }
 }
+
+.bento-box {
+  background: var(--surface);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
+}
+
+.hologram-text {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

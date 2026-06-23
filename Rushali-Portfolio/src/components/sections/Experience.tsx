@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const experiences = [
   {
@@ -31,56 +31,98 @@ const experiences = [
 ];
 
 export default function Experience() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeTab, setActiveTab] = useState(0);
   
   return (
-    <section id="experience" ref={containerRef} className="pt-16 md:pt-32 pb-12 md:pb-16 px-6 md:px-12 relative bg-[#030014]">
-      {/* Background Glows & Grid */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-sky-500/10 rounded-full blur-[100px] mix-blend-screen pointer-events-none -translate-y-1/2" />
-      <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-pink-500/10 rounded-full blur-[100px] mix-blend-screen pointer-events-none" />
-      
-      <div className="container relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-24"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Professional <span className="text-gradient">Journey</span>
-          </h2>
-          <p className="text-gray-400">My trajectory in software engineering.</p>
-        </motion.div>
+    <section id="experience" className="py-32 px-6 md:px-12 relative bg-white overflow-hidden">
+      <div className="container relative z-10 max-w-5xl mx-auto">
+        
+        <div className="flex flex-col items-center mb-20 text-center">
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]"
+          >
+            Career Trajectory
+          </motion.h2>
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: 80 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="h-[2px] bg-[#009ca6] rounded-full mb-6" 
+          />
+        </div>
 
-        <div className="relative pb-16 md:pb-32">
-          {experiences.map((exp, idx) => (
-            <div 
-              key={idx} 
-              className="relative md:sticky glass-card p-6 sm:p-10 md:p-14 mb-16 md:mb-32 last:mb-0 shadow-2xl transition-all border-white/10 hover:border-sky-400/30"
-              style={{ top: `calc(15vh + ${idx * 40}px)`, zIndex: idx + 1 }}
-            >
-              <div className="row items-start">
-                <div className="col md:w-1/3 mb-8 md:mb-0">
-                <span className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sky-300 text-sm font-medium mb-4">{exp.duration}</span>
-                <h3 className="text-3xl font-bold text-white mb-2">{exp.company}</h3>
-                <h4 className="text-xl text-purple-300">{exp.role}</h4>
-              </div>
-              
-                <div className="col md:w-2/3">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start w-full">
+          
+          {/* Left Column: Tabs */}
+          <div className="w-full md:w-1/3 flex md:flex-col overflow-x-auto md:overflow-visible pb-4 md:pb-0 space-x-2 md:space-x-0 md:space-y-2 border-b md:border-b-0 md:border-l-2 border-slate-200 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+            {experiences.map((exp, idx) => {
+              const isActive = activeTab === idx;
+              return (
+                <button
+                  key={idx}
+                  onClick={() => setActiveTab(idx)}
+                  className={`
+                    relative px-6 py-4 text-left whitespace-nowrap md:whitespace-normal font-medium transition-all duration-300 w-full
+                    ${isActive ? "text-[#009ca6] bg-[#009ca6]/5" : "text-slate-500 hover:text-[#0B253D] hover:bg-slate-50"}
+                  `}
+                >
+                  {/* Active Indicator Line */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTabIndicator"
+                      className="absolute bottom-0 left-0 h-[2px] w-full md:h-full md:w-[2px] md:-left-[2px] bg-[#009ca6] shadow-[0_0_10px_rgba(0,156,166,0.5)]"
+                      initial={false}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10 block text-lg font-semibold">{exp.company}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Right Column: Content */}
+          <div className="w-full md:w-2/3 min-h-[350px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="bg-[#F4F7FB] rounded-3xl p-8 md:p-10 border border-[#e2e8f0] shadow-sm"
+              >
+                <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#0B253D]">{experiences[activeTab].role}</h3>
+                    <h4 className="text-lg font-semibold text-[#009ca6] mt-1">@ {experiences[activeTab].company}</h4>
+                  </div>
+                  <span className="inline-block px-4 py-1.5 rounded-full bg-slate-100 text-[#009ca6] text-xs font-bold tracking-widest uppercase shadow-sm whitespace-nowrap h-fit">
+                    {experiences[activeTab].duration}
+                  </span>
+                </div>
+                
+                <p className="text-sm font-medium text-slate-400 mb-6 uppercase tracking-wider">
+                  {experiences[activeTab].location}
+                </p>
+                
                 <ul className="space-y-4">
-                  {exp.description.map((item, i) => (
-                    <li key={i} className="text-gray-300 text-base md:text-lg flex items-start gap-4">
-                      <span className="mt-2 w-2 h-2 rounded-full bg-pink-400 shrink-0 neon-glow" />
-                      <span className="leading-relaxed">{item}</span>
+                  {experiences[activeTab].description.map((item, i) => (
+                    <li key={i} className="text-[#475569] text-[15px] flex items-start gap-4 leading-relaxed">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#009ca6] shrink-0 shadow-sm" />
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
         </div>
       </div>
     </section>
