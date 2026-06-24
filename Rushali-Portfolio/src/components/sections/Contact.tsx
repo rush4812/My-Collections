@@ -11,25 +11,36 @@ export default function Contact() {
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setResult("Sending....");
-    const formData = new FormData(event.currentTarget);
+    
+    // Store reference to the form before async operations
+    const formElement = event.currentTarget;
+    const formData = new FormData(formElement);
 
-    // Provide the access key (the user will replace this with their own if they want, or we can use a generic one if possible, but Web3Forms needs a valid key. We will instruct the user to change it).
-    // Let's remind them in the code comments.
+    // Provide the access key
     formData.append("access_key", "f8b7a539-6032-4122-8887-4fe9f3a50819");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.success) {
-      setResult("Message Sent Successfully!");
-      event.currentTarget.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+      if (data.success) {
+        setResult("Message Sent Successfully!");
+        // Reset the form using the stored reference
+        formElement.reset();
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => setResult(""), 5000);
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+      }
+    } catch (error) {
+      console.log("Error", error);
+      setResult("Something went wrong. Please try again.");
     }
   };
 
