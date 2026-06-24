@@ -63,7 +63,7 @@ export default function Experience() {
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start w-full">
           
           {/* Left Column: Tabs */}
-          <div className="w-full md:w-1/3 flex md:flex-col overflow-x-auto md:overflow-visible pb-4 md:pb-0 space-x-3 md:space-x-0 md:space-y-2 border-b-0 md:border-l-2 border-slate-200 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] px-1">
+          <div className="w-full md:w-1/3 flex md:flex-col overflow-x-auto md:overflow-visible pb-4 md:pb-0 space-x-3 md:space-x-0 md:space-y-4 px-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
             {experiences.map((exp, idx) => {
               const isActive = activeTab === idx;
               return (
@@ -71,20 +71,13 @@ export default function Experience() {
                   key={idx}
                   onClick={() => setActiveTab(idx)}
                   className={`
-                    relative px-5 py-2 md:px-6 md:py-4 text-left whitespace-nowrap md:whitespace-normal font-medium transition-all duration-300 w-fit md:w-full rounded-full md:rounded-none
-                    ${isActive ? "text-[#009ca6] bg-[#009ca6]/10 md:bg-[#009ca6]/5 border border-[#009ca6] md:border-none md:border-transparent" : "text-slate-500 hover:text-[#0B253D] hover:bg-slate-50 border border-slate-200 md:border-none md:border-transparent"}
+                    relative px-5 py-3 md:px-6 md:py-5 text-left whitespace-nowrap md:whitespace-normal font-medium transition-all duration-300 w-fit md:w-full rounded-2xl
+                    ${isActive 
+                      ? "text-[#009ca6] bg-white/70 backdrop-blur-md border border-[#009ca6]/30 shadow-[0_8px_20px_rgb(0,156,166,0.1)]" 
+                      : "text-slate-500 hover:text-[#0B253D] bg-white/30 hover:bg-white/50 backdrop-blur-sm border border-white/40 shadow-sm"}
                   `}
                 >
-                  {/* Active Indicator Line */}
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeTabIndicator"
-                      className="hidden md:block absolute bottom-0 left-0 h-[2px] w-full md:h-full md:w-[2px] md:-left-[2px] bg-[#009ca6] shadow-[0_0_10px_rgba(0,156,166,0.5)]"
-                      initial={false}
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    />
-                  )}
-                  <span className="relative z-10 block text-[15px] md:text-lg font-semibold">{exp.company}</span>
+                  <span className="relative z-10 block text-[15px] md:text-lg font-bold">{exp.company}</span>
                 </button>
               );
             })}
