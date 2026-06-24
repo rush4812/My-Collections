@@ -50,7 +50,7 @@ function ProjectCard({ project }: { project: { name: string; description: string
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className="bg-white rounded-3xl p-6 h-full cursor-pointer group relative border border-[#e2e8f0] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-all duration-500"
+      className="relative w-full h-[500px] bg-white/60 backdrop-blur-md rounded-3xl p-8 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow flex flex-col group overflow-hidden"
     >
       <div style={{ transform: "translateZ(30px)" }} className="relative h-[220px] mb-8 rounded-2xl overflow-hidden shadow-inner group-hover:shadow-[0_0_20px_rgba(0,156,166,0.2)] transition-shadow duration-500">
         <Image 
@@ -89,10 +89,8 @@ function ProjectCard({ project }: { project: { name: string; description: string
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 md:py-24 lg:py-32 px-6 relative overflow-hidden bg-[#F4F7FB]">
-      {/* Abstract Background Elements */}
-      <div className="absolute top-1/4 left-0 w-[40vw] h-[40vw] bg-gradient-to-r from-[#eaf5f5] to-transparent rounded-full blur-[100px] opacity-60 -translate-x-1/2 pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-[30vw] h-[30vw] bg-gradient-to-l from-[#f4f7fb] to-transparent rounded-full blur-[80px] opacity-80 translate-x-1/2 pointer-events-none" />
+    <section id="projects" className="py-8 md:py-12 px-6 relative overflow-hidden border-t border-[#0B253D]/5 bg-[#f4f7fb]/20">
+
 
       <div className="container relative z-10 max-w-7xl mx-auto">
         <motion.div
@@ -100,7 +98,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center mb-12 md:mb-20 text-center"
+          className="flex flex-col items-center mb-8 md:mb-12 text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
             Projects

@@ -16,10 +16,10 @@ export default function About() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   return (
-    <section id="about" ref={containerRef} className="py-16 md:py-24 lg:py-32 px-6 relative overflow-hidden bg-gradient-to-b from-[#f8fafc] to-white">
+    <section id="about" ref={containerRef} className="py-8 md:py-12 px-6 relative overflow-hidden border-t border-white/40 bg-white/20">
       
       <motion.div style={{ opacity }} className="container relative z-10 max-w-7xl mx-auto">
-        <div className="flex flex-col items-center mb-12 md:mb-20 text-center">
+        <div className="flex flex-col items-center mb-8 md:mb-12 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
             About Me
           </h2>
@@ -44,9 +44,7 @@ export default function About() {
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col justify-center bg-white/60 md:backdrop-blur-xl p-6 md:p-10 rounded-3xl border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden"
+            className="flex flex-col justify-center bg-white/60 backdrop-blur-md md:backdrop-blur-xl p-6 md:p-10 rounded-3xl border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden"
           >
             {/* Subtle glow behind text */}
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#009ca6] opacity-10 blur-3xl rounded-full" />

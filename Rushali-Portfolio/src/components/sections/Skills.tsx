@@ -36,10 +36,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-16 md:py-24 lg:py-32 px-6 relative overflow-hidden bg-[#F4F7FB]">
-      {/* Abstract Background Elements */}
-      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-gradient-to-b from-[#eaf5f5] to-transparent rounded-full blur-[100px] opacity-60 -translate-y-1/2 translate-x-1/4 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-gradient-to-t from-[#f4f7fb] to-transparent rounded-full blur-[80px] opacity-80 translate-y-1/4 -translate-x-1/4 pointer-events-none" />
+    <section id="skills" className="py-8 md:py-12 px-6 relative overflow-hidden border-t border-[#0B253D]/5 bg-[#f4f7fb]/20">
 
       <div className="container relative z-10 max-w-7xl mx-auto">
         <motion.div
@@ -47,7 +44,7 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center mb-12 md:mb-20 text-center"
+          className="flex flex-col items-center mb-8 md:mb-12 text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
             My Skills
@@ -67,7 +64,7 @@ export default function Skills() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: groupIdx * 0.2 }}
             >
-              <div className="bg-white rounded-3xl p-10 border border-[#e2e8f0] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 group relative h-full hover:-translate-y-2 overflow-hidden">
+              <div className="bg-white/60 backdrop-blur-md rounded-3xl p-8 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 group relative h-full hover:-translate-y-2 overflow-hidden">
                 {/* Glass subtle highlight */}
                 <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
                 
