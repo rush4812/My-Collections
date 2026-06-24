@@ -1,11 +1,8 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import dynamic from "next/dynamic";
 import { Download, ArrowRight, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-
-const InteractiveTorus = dynamic(() => import("@/components/ui/InteractiveTorus"), { ssr: false });
 
 export default function Hero() {
   const containerVariants: Variants = {
@@ -23,8 +20,6 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-transparent">
-
-      <InteractiveTorus />
       
       <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6">
         <motion.div
