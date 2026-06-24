@@ -1,0 +1,19 @@
+Tamara changes (Experience section ma je tamari job details update kari) te Git par push karva mate na steps:
+
+STEP 1:
+VS Code ma Terminal open karo (Shortcut: Ctrl + `) 
+Athva uper menu mathi Terminal -> New Terminal select karo.
+
+STEP 2:
+Niche avela commands ek pachi ek type karo ane Enter dabavo:
+
+1. Badha changes add karva mate:
+git add .
+
+2. Changes ne commit karva mate (message sathe):
+git commit -m "Update Experience details"
+
+3. GitHub par push karva mate (aana thi Vercel par automatically live thai jase):
+git push
+
+Bas, aa 3 commands run karso etle 1-2 minute ma tamari live link par navi Experience details aavi jase!

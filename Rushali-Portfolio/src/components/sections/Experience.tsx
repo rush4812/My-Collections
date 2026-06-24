@@ -6,26 +6,30 @@ import { motion, AnimatePresence } from "framer-motion";
 const experiences = [
   {
     company: "NetInc Digital Services LLP",
-    role: "Software Developer (MERN Stack)",
+    role: "Associate Software Developer",
     duration: "2025 – Present",
-    location: "Ahmedabad",
+    location: "Ahmedabad, Gujarat",
     description: [
-      "Architected and maintained robust, production-grade web applications utilizing the MERN stack.",
-      "Engineered dynamic UI components with React.js, Vue.js, and Next.js, alongside backend APIs in Node.js and Laravel.",
-      "Integrated complex databases (MongoDB, PostgreSQL) and orchestrated seamless frontend-backend communication.",
-      "Spearheaded simultaneous project deliveries, leveraging AI dev tools to accelerate turnaround times.",
+      "Develop and maintain scalable web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
+      "Build responsive and interactive user interfaces with React.js, Next.js, Vue.js, Tailwind CSS, and Bootstrap.",
+      "Design and integrate RESTful APIs using Node.js and Laravel, ensuring seamless frontend-backend communication.",
+      "Manage MongoDB and PostgreSQL databases, optimizing performance and data integrity.",
+      "Collaborate across multiple projects, delivering high-quality solutions within tight deadlines.",
+      "Utilize AI-assisted development tools to improve productivity, code quality, and delivery speed."
     ],
   },
   {
     company: "Sharva InfoTech",
-    role: "Full Stack Developer",
+    role: "MERN Stack Developer",
     duration: "2022 – 2023",
-    location: "Rajkot",
+    location: "Rajkot, Gujarat",
     description: [
-      "Developed advanced UI components using React.js and modern styling frameworks like Tailwind and Bootstrap.",
-      "Engineered full-stack features involving complex CRUD operations, API integrations, and database modeling.",
-      "Collaborated in cross-functional teams, leveraging version control (Git/GitHub) for streamlined workflows.",
-      "Contributed to end-to-end feature development, maintaining clean code practices.",
+      "Developed modern web applications using React.js, Node.js, Express.js, and MongoDB.",
+      "Created reusable UI components and responsive layouts using Tailwind CSS and Bootstrap.",
+      "Implemented CRUD operations, third-party API integrations, and database-driven features.",
+      "Worked closely with designers and developers to deliver user-centric solutions.",
+      "Managed source code using Git and GitHub, following industry-standard development practices.",
+      "Maintained clean, efficient, and scalable code throughout the development lifecycle."
     ],
   },
 ];
