@@ -20,7 +20,7 @@ const experiences = [
   },
   {
     company: "Sharva InfoTech",
-    role:  "Developer ",
+    role: "React.js Developer ",
     duration: "2022 – 2023",
     location: "Rajkot, Gujarat",
     description: [
@@ -36,13 +36,13 @@ const experiences = [
 
 export default function Experience() {
   const [activeTab, setActiveTab] = useState(0);
-  
+
   return (
-    <section id="experience" className="py-8 md:py-12 px-4 md:px-6 relative overflow-hidden border-t border-white/40 bg-white/20">
+    <section id="experience" className="py-8 md:py-12 px-6 relative overflow-hidden border-t border-white/40 bg-white/20">
       <div className="container relative z-10 max-w-5xl mx-auto">
-        
+
         <div className="flex flex-col items-center mb-8 md:mb-12 text-center">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -51,19 +51,19 @@ export default function Experience() {
           >
             Experience
           </motion.h2>
-          <motion.div 
+          <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 80 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-[2px] bg-[#009ca6] rounded-full mb-6" 
+            className="h-[2px] bg-[#009ca6] rounded-full mb-6"
           />
         </div>
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start w-full">
-          
+
           {/* Left Column: Tabs */}
-          <div className="w-full md:w-1/3 flex flex-col space-y-3 md:space-y-4 pb-4 md:pb-0 px-1">
+          <div className="w-full md:w-1/3 flex md:flex-col overflow-x-auto md:overflow-visible pb-4 md:pb-0 space-x-3 md:space-x-0 md:space-y-4 px-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
             {experiences.map((exp, idx) => {
               const isActive = activeTab === idx;
               return (
@@ -72,8 +72,8 @@ export default function Experience() {
                   onClick={() => setActiveTab(idx)}
                   className={`
                     relative px-5 py-3 md:px-6 md:py-5 text-left whitespace-nowrap md:whitespace-normal font-medium transition-all duration-300 w-fit md:w-full rounded-2xl
-                    ${isActive 
-                      ? "text-[#009ca6] bg-white/70 backdrop-blur-md border border-[#009ca6]/30 shadow-[0_8px_20px_rgb(0,156,166,0.1)]" 
+                    ${isActive
+                      ? "text-[#009ca6] bg-white/70 backdrop-blur-md border border-[#009ca6]/30 shadow-[0_8px_20px_rgb(0,156,166,0.1)]"
                       : "text-slate-500 hover:text-[#0B253D] bg-white/30 hover:bg-white/50 backdrop-blur-sm border border-white/40 shadow-sm"}
                   `}
                 >
@@ -103,11 +103,11 @@ export default function Experience() {
                     {experiences[activeTab].duration}
                   </span>
                 </div>
-                
+
                 <p className="text-sm font-medium text-slate-400 mb-6 uppercase tracking-wider">
                   {experiences[activeTab].location}
                 </p>
-                
+
                 <ul className="space-y-4">
                   {experiences[activeTab].description.map((item, i) => (
                     <li key={i} className="text-[#475569] text-[15px] flex items-start gap-4 leading-relaxed">
