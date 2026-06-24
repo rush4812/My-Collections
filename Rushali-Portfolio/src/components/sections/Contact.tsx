@@ -15,7 +15,7 @@ export default function Contact() {
 
     // Provide the access key (the user will replace this with their own if they want, or we can use a generic one if possible, but Web3Forms needs a valid key. We will instruct the user to change it).
     // Let's remind them in the code comments.
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    formData.append("access_key", "f8b7a539-6032-4122-8887-4fe9f3a50819");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
