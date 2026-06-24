@@ -34,7 +34,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-[#f4f7fb] to-white">
+    <section id="contact" className="py-16 md:py-24 lg:py-32 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-[#f4f7fb] to-white">
       {/* Abstract Background Elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-gradient-to-tr from-[#009ca6]/5 to-[#eaf5f5]/50 rounded-full blur-[120px] pointer-events-none" />
 
@@ -44,7 +44,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center mb-20 text-center"
+          className="flex flex-col items-center mb-12 md:mb-20 text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
             Contact Me
@@ -55,7 +55,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
           
           {/* Left Contact Info */}
           <motion.div

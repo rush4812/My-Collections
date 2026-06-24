@@ -34,10 +34,10 @@ export default function Experience() {
   const [activeTab, setActiveTab] = useState(0);
   
   return (
-    <section id="experience" className="py-32 px-6 md:px-12 relative bg-white overflow-hidden">
+    <section id="experience" className="py-16 md:py-24 lg:py-32 px-6 md:px-12 relative bg-white overflow-hidden">
       <div className="container relative z-10 max-w-5xl mx-auto">
         
-        <div className="flex flex-col items-center mb-20 text-center">
+        <div className="flex flex-col items-center mb-12 md:mb-20 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

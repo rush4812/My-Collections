@@ -16,10 +16,10 @@ export default function About() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   return (
-    <section id="about" ref={containerRef} className="py-32 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-[#f8fafc] to-white">
+    <section id="about" ref={containerRef} className="py-16 md:py-24 lg:py-32 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-[#f8fafc] to-white">
       
       <motion.div style={{ opacity }} className="container relative z-10 max-w-7xl mx-auto">
-        <div className="flex flex-col items-center mb-20 text-center">
+        <div className="flex flex-col items-center mb-12 md:mb-20 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
             About Me
           </h2>

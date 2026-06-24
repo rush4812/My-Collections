@@ -89,7 +89,7 @@ function ProjectCard({ project }: { project: { name: string; description: string
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-32 px-6 md:px-12 relative overflow-hidden bg-[#F4F7FB]">
+    <section id="projects" className="py-16 md:py-24 lg:py-32 px-6 md:px-12 relative overflow-hidden bg-[#F4F7FB]">
       {/* Abstract Background Elements */}
       <div className="absolute top-1/4 left-0 w-[40vw] h-[40vw] bg-gradient-to-r from-[#eaf5f5] to-transparent rounded-full blur-[100px] opacity-60 -translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-1/4 right-0 w-[30vw] h-[30vw] bg-gradient-to-l from-[#f4f7fb] to-transparent rounded-full blur-[80px] opacity-80 translate-x-1/2 pointer-events-none" />
@@ -100,7 +100,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center mb-20 text-center"
+          className="flex flex-col items-center mb-12 md:mb-20 text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
             Projects
