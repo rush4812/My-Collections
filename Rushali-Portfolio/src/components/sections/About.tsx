@@ -52,13 +52,13 @@ export default function About() {
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#009ca6] opacity-10 blur-3xl rounded-full" />
             
             <h3 className="text-2xl md:text-3xl font-bold text-[#0B253D] mb-6 leading-tight relative z-10">
-              Crafting Digital Architecture with Precision
+              Architecting Digital Ecosystems with Precision
             </h3>
             <p className="text-[#475569] text-lg leading-relaxed mb-6 relative z-10 font-medium">
-              I am a results-driven Frontend Engineer specializing in architecting high-performance, visually stunning web applications. With deep expertise in <span className="text-[#009ca6] font-bold">React.js, Next.js, and modern JavaScript ecosystems</span>, I transform complex requirements into elegant, scalable digital solutions.
+              I am a results-driven Software Developer specializing in architecting high-performance, full-stack web applications. With deep expertise in the <span className="text-[#009ca6] font-bold">MERN Stack, Next.js, Vue.js, PHP ecosystems (Laravel, CodeIgniter), and modern AI development tools</span>, I transform complex business logic into scalable digital solutions.
             </p>
             <p className="text-[#475569] text-lg leading-relaxed mb-8 relative z-10 font-medium">
-              Beyond writing clean and efficient code, I am obsessed with delivering frictionless user experiences, optimizing web performance, and integrating cutting-edge frontend technologies to drive business growth and user engagement.
+              Beyond engineering robust codebases, I leverage advanced AI tools like Cursor, GitHub Copilot, and Claude to accelerate development. My approach integrates cutting-edge frontend and backend technologies to engineer seamless user experiences and robust architectures.
             </p>
             <div className="flex gap-8 relative z-10">
               <div className="flex flex-col">

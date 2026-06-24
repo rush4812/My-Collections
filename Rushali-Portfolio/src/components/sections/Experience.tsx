@@ -6,26 +6,26 @@ import { motion, AnimatePresence } from "framer-motion";
 const experiences = [
   {
     company: "NetInc Digital Services LLP",
-    role: "Associate Software Developer",
+    role: "Software Developer (MERN Stack)",
     duration: "2025 – Present",
     location: "Ahmedabad",
     description: [
-      "Developed and maintained multiple production-level web applications.",
-      "Built dynamic and reusable UI components using React.js and Vue.js.",
-      "Integrated frontend with backend systems using REST APIs.",
-      "Managed multiple projects simultaneously and delivered within deadlines.",
+      "Architected and maintained robust, production-grade web applications utilizing the MERN stack.",
+      "Engineered dynamic UI components with React.js, Vue.js, and Next.js, alongside backend APIs in Node.js and Laravel.",
+      "Integrated complex databases (MongoDB, PostgreSQL) and orchestrated seamless frontend-backend communication.",
+      "Spearheaded simultaneous project deliveries, leveraging AI dev tools to accelerate turnaround times.",
     ],
   },
   {
     company: "Sharva InfoTech",
-    role: "React.js Developer",
+    role: "Full Stack Developer",
     duration: "2022 – 2023",
     location: "Rajkot",
     description: [
-      "Developed reusable UI components using React.js.",
-      "Worked on CRUD operations and API integration.",
-      "Assisted in frontend feature development in real-world projects.",
-      "Gained experience in team-based development and project workflows.",
+      "Developed advanced UI components using React.js and modern styling frameworks like Tailwind and Bootstrap.",
+      "Engineered full-stack features involving complex CRUD operations, API integrations, and database modeling.",
+      "Collaborated in cross-functional teams, leveraging version control (Git/GitHub) for streamlined workflows.",
+      "Contributed to end-to-end feature development, maintaining clean code practices.",
     ],
   },
 ];

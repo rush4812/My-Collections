@@ -43,7 +43,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p variants={childVariants} className="text-[#788998] text-lg sm:text-xl max-w-lg mb-10 leading-relaxed font-medium">
-            Creative Frontend Engineer building immersive digital experiences and futuristic web applications.
+            Creative Software Developer and MERN Stack Expert engineering immersive digital experiences and futuristic web applications with state-of-the-art AI tools.
           </motion.p>
 
           <motion.div variants={childVariants} className="flex flex-wrap items-center gap-5 mb-12">

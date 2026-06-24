@@ -6,12 +6,12 @@ import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
 const projects = [
-  { name: "Amanta", description: "Developed and launched the new website with responsive UI.", type: "Production Website", link: "https://amanta.co.in/", glow: "cyan" },
-  { name: "Calico Museum", description: "Worked on frontend development for the new interactive museum website.", type: "Web App", link: "https://www.calicomuseum.org/", glow: "teal" },
-  { name: "CUPDF", description: "Complex UI implementation and architectural improvements using Vue.js.", type: "Platform", link: "https://cupdf.org/", glow: "cyan" },
-  { name: "MDI Gurgaon", description: "Website maintenance, layout fixes, and performance optimization.", type: "Educational Portal", link: "https://www.mdi.ac.in/", glow: "teal" },
-  { name: "Madhubhan Resort", description: "New website implementation and launch with immersive visuals.", type: "Hospitality", link: "https://www.madhubhanresortandspa.com/", glow: "cyan" },
-  { name: "Elecon", description: "Website maintenance and responsive layout fixes for enterprise client.", type: "Corporate", link: "https://www.elecon.com/", glow: "teal" },
+  { name: "Amanta", description: "Architected and launched a fully responsive platform with advanced UI.", type: "Production Platform", link: "https://amanta.co.in/", glow: "cyan" },
+  { name: "Calico Museum", description: "Engineered an interactive museum web application utilizing state-of-the-art frameworks.", type: "Web App", link: "https://www.calicomuseum.org/", glow: "teal" },
+  { name: "CUPDF", description: "Spearheaded complex UI implementation and architectural enhancements using Vue.js.", type: "Platform", link: "https://cupdf.org/", glow: "cyan" },
+  { name: "MDI Gurgaon", description: "Executed systematic maintenance, dynamic layout fixes, and full-stack performance optimization.", type: "Educational Portal", link: "https://www.mdi.ac.in/", glow: "teal" },
+  { name: "Madhubhan Resort", description: "Orchestrated end-to-end platform deployment with immersive visual interfaces.", type: "Hospitality", link: "https://www.madhubhanresortandspa.com/", glow: "cyan" },
+  { name: "Elecon", description: "Delivered comprehensive maintenance and robust responsive solutions for an enterprise client.", type: "Corporate", link: "https://www.elecon.com/", glow: "teal" },
 ];
 
 function ProjectCard({ project }: { project: { name: string; description: string; type: string; link: string; glow: string } }) { 
@@ -107,7 +107,7 @@ export default function Projects() {
           </h2>
           <div className="h-[2px] w-20 bg-[#009ca6] rounded-full mb-6" />
           <p className="text-[#475569] max-w-2xl text-center text-lg font-medium">
-            A selection of live production websites and applications I have engineered.
+            A selection of full-stack production platforms and dynamic web applications I have engineered.
           </p>
         </motion.div>
 
