@@ -3,8 +3,36 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
 
 export default function Contact() {
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event: any) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    // Provide the access key (the user will replace this with their own if they want, or we can use a generic one if possible, but Web3Forms needs a valid key. We will instruct the user to change it).
+    // Let's remind them in the code comments.
+    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Message Sent Successfully!");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <section id="contact" className="py-32 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-[#f4f7fb] to-white">
       {/* Abstract Background Elements */}
@@ -19,11 +47,11 @@ export default function Contact() {
           className="flex flex-col items-center mb-20 text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
-            Establish Connection
+            Contact Me
           </h2>
           <div className="h-[2px] w-20 bg-[#009ca6] rounded-full mb-6" />
           <p className="text-[#475569] max-w-2xl text-center text-lg font-medium">
-            Ready to engineer something extraordinary? Let&apos;s connect.
+            Ready to work together? Let&apos;s connect.
           </p>
         </motion.div>
 
@@ -38,7 +66,7 @@ export default function Contact() {
             className="flex flex-col justify-between"
           >
             <div>
-              <h3 className="text-3xl font-bold text-[#0B253D] mb-8 uppercase tracking-widest">Protocol Info</h3>
+              <h3 className="text-3xl font-bold text-[#0B253D] mb-8 uppercase tracking-widest">Contact Information</h3>
               
               <div className="space-y-8">
                 <a href="mailto:rushjivrajani48@gmail.com" className="flex items-center gap-6 text-[#475569] hover:text-[#009ca6] transition-colors group/item">
@@ -68,7 +96,7 @@ export default function Contact() {
               <a href="https://github.com/rush4812" target="_blank" className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-md border border-white flex items-center justify-center text-[#475569] hover:text-[#0B253D] shadow-sm transition-all hover:-translate-y-2 hover:shadow-md">
                 <FaGithub className="w-7 h-7" />
               </a>
-              <a href="https://linkedin.com" target="_blank" className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-md border border-white flex items-center justify-center text-[#475569] hover:text-[#0077b5] shadow-sm transition-all hover:-translate-y-2 hover:shadow-md">
+              <a href="https://linkedin.com/in/rushali-jivrajani-448201202" target="_blank" className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-md border border-white flex items-center justify-center text-[#475569] hover:text-[#0077b5] shadow-sm transition-all hover:-translate-y-2 hover:shadow-md">
                 <FaLinkedin className="w-7 h-7" />
               </a>
             </div>
@@ -81,47 +109,59 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <form className="bg-white/60 backdrop-blur-xl rounded-3xl p-8 md:p-12 space-y-8 relative border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all h-full flex flex-col">
+            <form onSubmit={onSubmit} className="bg-white/60 backdrop-blur-xl rounded-3xl p-8 md:p-12 space-y-8 relative border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all h-full flex flex-col">
               
               <div className="space-y-6 flex-grow relative z-10">
                 <div className="relative">
-                  <label htmlFor="name" className="block text-xs font-bold uppercase tracking-widest text-[#475569] mb-2">Identifier</label>
+                  <label htmlFor="name" className="block text-xs font-bold uppercase tracking-widest text-[#475569] mb-2">Name</label>
                   <input 
                     type="text" 
                     id="name" 
+                    name="name"
+                    required
                     className="w-full bg-white/50 border border-white rounded-xl px-5 py-4 text-[#0B253D] focus:outline-none focus:border-[#009ca6] focus:bg-white transition-all shadow-sm"
                     placeholder="John Doe"
                   />
                 </div>
                 
                 <div className="relative">
-                  <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest text-[#475569] mb-2">Return Address</label>
+                  <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest text-[#475569] mb-2">Email</label>
                   <input 
                     type="email" 
                     id="email" 
+                    name="email"
+                    required
                     className="w-full bg-white/50 border border-white rounded-xl px-5 py-4 text-[#0B253D] focus:outline-none focus:border-[#009ca6] focus:bg-white transition-all shadow-sm"
                     placeholder="john@example.com"
                   />
                 </div>
                 
                 <div className="relative">
-                  <label htmlFor="message" className="block text-xs font-bold uppercase tracking-widest text-[#475569] mb-2">Payload</label>
+                  <label htmlFor="message" className="block text-xs font-bold uppercase tracking-widest text-[#475569] mb-2">Message</label>
                   <textarea 
                     id="message" 
+                    name="message"
+                    required
                     rows={5}
                     className="w-full bg-white/50 border border-white rounded-xl px-5 py-4 text-[#0B253D] focus:outline-none focus:border-[#009ca6] focus:bg-white transition-all resize-none shadow-sm"
-                    placeholder="Enter communication..."
+                    placeholder="Write your message here..."
                   />
                 </div>
               </div>
 
               <button 
-                type="button" 
-                className="w-full py-5 rounded-xl font-bold text-white bg-[#0B253D] hover:bg-[#009ca6] transition-all flex items-center justify-center gap-3 group/btn mt-auto relative z-10 shadow-md hover:shadow-lg"
+                type="submit" 
+                className="w-full py-5 rounded-xl font-bold text-white bg-[#0B253D] hover:bg-[#009ca6] transition-all flex items-center justify-center gap-3 group/btn mt-auto relative z-10 shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Transmit
+                Send Message
                 <Send className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" />
               </button>
+              
+              {result && (
+                <p className={`text-center font-semibold text-sm ${result === "Message Sent Successfully!" ? "text-green-600" : "text-[#0B253D]"}`}>
+                  {result}
+                </p>
+              )}
             </form>
           </motion.div>
 

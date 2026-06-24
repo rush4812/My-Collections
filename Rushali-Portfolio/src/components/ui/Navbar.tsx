@@ -36,11 +36,11 @@ export default function Navbar() {
         scrolled ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100" : "bg-transparent"
       )}
     >
-      <div className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform max-w-7xl mx-auto w-full justify-between">
+      <div className="flex items-center gap-2 cursor-pointer max-w-7xl mx-auto w-full justify-between">
         <div className="flex items-center gap-2">
           {/* Montor-style script/elegant logo approach */}
           <div className="text-3xl font-black tracking-tight flex gap-1">
-            <span className="text-[#009ca6] italic pr-1">Rushali</span>
+            <span className="text-[#009ca6] italic pr-1">Rushali Jivrajani</span>
           </div>
         </div>
         
@@ -57,9 +57,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a href="#contact" className="hidden lg:block px-8 py-3 bg-[#0B253D] text-white rounded-md font-bold text-sm hover:bg-[#009ca6] hover:text-white transition-colors duration-300">
-          CONTACT ME
-        </a>
+
 
         <button 
           className="lg:hidden p-2 text-[#0B253D]"
@@ -86,9 +84,7 @@ export default function Navbar() {
                   {item.name}
                 </a>
               ))}
-              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="w-full mt-2 py-3 bg-[#0B253D] text-white rounded-md font-bold text-center text-sm">
-                CONTACT ME
-              </a>
+
             </motion.div>
           )}
         </AnimatePresence>

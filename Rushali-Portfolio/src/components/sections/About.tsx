@@ -26,10 +26,10 @@ export default function About() {
           <div className="h-[2px] w-20 bg-[#009ca6] rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           
           {/* Left Image Block */}
-          <motion.div style={{ y }} className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl shadow-[#009ca6]/10 border border-white/50">
+          <motion.div style={{ y }} className="relative h-[300px] md:h-[400px] lg:h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl shadow-[#009ca6]/10 border border-white/50">
             <Image 
               src="/assets/about_abstract_3d_1782208810311.png" 
               alt="3D Abstract Tech Illustration" 
@@ -52,15 +52,15 @@ export default function About() {
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#009ca6] opacity-10 blur-3xl rounded-full" />
             
             <h3 className="text-2xl md:text-3xl font-bold text-[#0B253D] mb-6 leading-tight relative z-10">
-              Architecting Digital Ecosystems with Precision
+              Building High-Quality Web Applications
             </h3>
             <p className="text-[#475569] text-lg leading-relaxed mb-6 relative z-10 font-medium">
-              I am a results-driven Software Developer specializing in architecting high-performance, full-stack web applications. With deep expertise in the <span className="text-[#009ca6] font-bold">MERN Stack, Next.js, Vue.js, PHP ecosystems (Laravel, CodeIgniter), and modern AI development tools</span>, I transform complex business logic into scalable digital solutions.
+              I am a Software Developer who loves building fast, responsive, and full-stack web applications. With deep expertise in the <span className="text-[#009ca6] font-bold">MERN Stack, Next.js, Vue.js, PHP ecosystems (Laravel, CodeIgniter), and modern AI development tools</span>, I transform ideas into scalable digital solutions.
             </p>
             <p className="text-[#475569] text-lg leading-relaxed mb-8 relative z-10 font-medium">
-              Beyond engineering robust codebases, I leverage advanced AI tools like Cursor, GitHub Copilot, and Claude to accelerate development. My approach integrates cutting-edge frontend and backend technologies to engineer seamless user experiences and robust architectures.
+              Along with writing clean code, I use AI tools like Cursor and GitHub Copilot to work faster. I focus on creating great user experiences with modern technologies.
             </p>
-            <div className="flex gap-8 relative z-10">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 relative z-10">
               <div className="flex flex-col">
                 <span className="text-4xl font-black text-[#009ca6] mb-1 drop-shadow-sm">2+</span>
                 <span className="text-sm font-bold text-[#0B253D] uppercase tracking-wider">Years Experience</span>

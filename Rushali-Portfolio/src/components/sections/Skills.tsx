@@ -50,11 +50,11 @@ export default function Skills() {
           className="flex flex-col items-center mb-20 text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
-            Technical Arsenal
+            My Skills
           </h2>
           <div className="h-[2px] w-20 bg-[#009ca6] rounded-full mb-6" />
           <p className="text-[#475569] max-w-2xl text-lg font-medium">
-            My integrated toolset for constructing high-performance digital architectures.
+            The tools and technologies I use to build web applications.
           </p>
         </motion.div>
 
