@@ -20,7 +20,7 @@ const experiences = [
   },
   {
     company: "Sharva InfoTech",
-    role: "MERN Stack Developer",
+    role:  "Developer ",
     duration: "2022 – 2023",
     location: "Rajkot, Gujarat",
     description: [
@@ -38,7 +38,7 @@ export default function Experience() {
   const [activeTab, setActiveTab] = useState(0);
   
   return (
-    <section id="experience" className="py-8 md:py-12 px-6 relative overflow-hidden border-t border-white/40 bg-white/20">
+    <section id="experience" className="py-8 md:py-12 px-4 md:px-6 relative overflow-hidden border-t border-white/40 bg-white/20">
       <div className="container relative z-10 max-w-5xl mx-auto">
         
         <div className="flex flex-col items-center mb-8 md:mb-12 text-center">
@@ -63,7 +63,7 @@ export default function Experience() {
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start w-full">
           
           {/* Left Column: Tabs */}
-          <div className="w-full md:w-1/3 flex md:flex-col overflow-x-auto md:overflow-visible pb-4 md:pb-0 space-x-3 md:space-x-0 md:space-y-4 px-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+          <div className="w-full md:w-1/3 flex flex-col space-y-3 md:space-y-4 pb-4 md:pb-0 px-1">
             {experiences.map((exp, idx) => {
               const isActive = activeTab === idx;
               return (

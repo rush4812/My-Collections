@@ -89,7 +89,7 @@ function ProjectCard({ project }: { project: { name: string; description: string
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-8 md:py-12 px-6 relative overflow-hidden border-t border-[#0B253D]/5 bg-[#f4f7fb]/20">
+    <section id="projects" className="py-8 md:py-12 px-4 md:px-6 relative overflow-hidden border-t border-[#0B253D]/5 bg-[#f4f7fb]/20">
 
 
       <div className="container relative z-10 max-w-7xl mx-auto">

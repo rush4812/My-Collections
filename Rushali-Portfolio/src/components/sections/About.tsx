@@ -16,7 +16,7 @@ export default function About() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   return (
-    <section id="about" ref={containerRef} className="py-8 md:py-12 px-6 relative overflow-hidden border-t border-white/40 bg-white/20">
+    <section id="about" ref={containerRef} className="py-8 md:py-12 px-4 md:px-6 relative overflow-hidden border-t border-white/40 bg-white/20">
       
       <motion.div style={{ opacity }} className="container relative z-10 max-w-7xl mx-auto">
         <div className="flex flex-col items-center mb-8 md:mb-12 text-center">
