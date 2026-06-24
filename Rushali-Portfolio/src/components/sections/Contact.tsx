@@ -8,10 +8,10 @@ import { useState } from "react";
 export default function Contact() {
   const [result, setResult] = useState("");
 
-  const onSubmit = async (event: any) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setResult("Sending....");
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.currentTarget);
 
     // Provide the access key (the user will replace this with their own if they want, or we can use a generic one if possible, but Web3Forms needs a valid key. We will instruct the user to change it).
     // Let's remind them in the code comments.
@@ -26,7 +26,7 @@ export default function Contact() {
 
     if (data.success) {
       setResult("Message Sent Successfully!");
-      event.target.reset();
+      event.currentTarget.reset();
     } else {
       console.log("Error", data);
       setResult(data.message);
