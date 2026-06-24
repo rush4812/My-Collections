@@ -34,9 +34,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 lg:py-32 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-[#f4f7fb] to-white">
+    <section id="contact" className="py-16 md:py-24 lg:py-32 px-6 relative overflow-hidden bg-gradient-to-b from-[#f4f7fb] to-white">
       {/* Abstract Background Elements */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-gradient-to-tr from-[#009ca6]/5 to-[#eaf5f5]/50 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-gradient-to-tr from-[#009ca6]/5 to-[#eaf5f5]/50 rounded-full blur-3xl md:blur-[120px] pointer-events-none" />
 
       <div className="container relative z-10 max-w-7xl mx-auto">
         <motion.div
@@ -109,7 +109,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <form onSubmit={onSubmit} className="bg-white/60 backdrop-blur-xl rounded-3xl p-8 md:p-12 space-y-8 relative border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all h-full flex flex-col">
+            <form onSubmit={onSubmit} className="bg-white/60 md:backdrop-blur-xl rounded-3xl p-6 md:p-12 space-y-8 relative border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all h-full flex flex-col">
               
               <div className="space-y-6 flex-grow relative z-10">
                 <div className="relative">

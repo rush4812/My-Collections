@@ -34,7 +34,7 @@ export default function Experience() {
   const [activeTab, setActiveTab] = useState(0);
   
   return (
-    <section id="experience" className="py-16 md:py-24 lg:py-32 px-6 md:px-12 relative bg-white overflow-hidden">
+    <section id="experience" className="py-16 md:py-24 lg:py-32 px-6 relative bg-white overflow-hidden">
       <div className="container relative z-10 max-w-5xl mx-auto">
         
         <div className="flex flex-col items-center mb-12 md:mb-20 text-center">
@@ -95,7 +95,7 @@ export default function Experience() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
-                className="bg-[#F4F7FB] rounded-3xl p-8 md:p-10 border border-[#e2e8f0] shadow-sm"
+                className="bg-[#F4F7FB] rounded-3xl p-6 md:p-10 border border-[#e2e8f0] shadow-sm"
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4">
                   <div>

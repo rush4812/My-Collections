@@ -36,7 +36,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-16 md:py-24 lg:py-32 px-6 md:px-12 relative overflow-hidden bg-[#F4F7FB]">
+    <section id="skills" className="py-16 md:py-24 lg:py-32 px-6 relative overflow-hidden bg-[#F4F7FB]">
       {/* Abstract Background Elements */}
       <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-gradient-to-b from-[#eaf5f5] to-transparent rounded-full blur-[100px] opacity-60 -translate-y-1/2 translate-x-1/4 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-gradient-to-t from-[#f4f7fb] to-transparent rounded-full blur-[80px] opacity-80 translate-y-1/4 -translate-x-1/4 pointer-events-none" />

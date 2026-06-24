@@ -89,7 +89,7 @@ function ProjectCard({ project }: { project: { name: string; description: string
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 md:py-24 lg:py-32 px-6 md:px-12 relative overflow-hidden bg-[#F4F7FB]">
+    <section id="projects" className="py-16 md:py-24 lg:py-32 px-6 relative overflow-hidden bg-[#F4F7FB]">
       {/* Abstract Background Elements */}
       <div className="absolute top-1/4 left-0 w-[40vw] h-[40vw] bg-gradient-to-r from-[#eaf5f5] to-transparent rounded-full blur-[100px] opacity-60 -translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-1/4 right-0 w-[30vw] h-[30vw] bg-gradient-to-l from-[#f4f7fb] to-transparent rounded-full blur-[80px] opacity-80 translate-x-1/2 pointer-events-none" />
