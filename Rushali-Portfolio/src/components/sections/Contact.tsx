@@ -45,10 +45,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-8 md:py-12 px-4 md:px-6 relative overflow-hidden border-t border-white/40 bg-white/20">
+    <section id="contact" className="py-8 md:py-12 relative overflow-hidden border-t border-white/40 bg-white/20">
 
 
-      <div className="container relative z-10 max-w-7xl mx-auto">
+      <div className="container relative z-10 max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,11 +56,11 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center mb-8 md:mb-12 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0B253D]">
             Contact Me
           </h2>
           <div className="h-[2px] w-20 bg-[#009ca6] rounded-full mb-6" />
-          <p className="text-[#475569] max-w-2xl text-center text-lg font-medium">
+          <p className="text-[#475569] max-w-2xl text-center text-base font-medium">
             Ready to work together? Let&apos;s connect.
           </p>
         </motion.div>
@@ -76,28 +76,28 @@ export default function Contact() {
             className="flex flex-col justify-between"
           >
             <div>
-              <h3 className="text-3xl font-bold text-[#0B253D] mb-8 uppercase tracking-widest">Contact Information</h3>
+              <h3 className="text-2xl font-bold text-[#0B253D] mb-8 uppercase tracking-widest">Contact Information</h3>
               
               <div className="space-y-8">
                 <a href="mailto:rushjivrajani48@gmail.com" className="flex items-center gap-6 text-[#475569] hover:text-[#009ca6] transition-colors group/item">
                   <div className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-md border border-white flex items-center justify-center group-hover/item:border-[#009ca6]/30 shadow-sm transition-all group-hover/item:scale-105">
                     <Mail className="w-6 h-6 text-[#009ca6]" />
                   </div>
-                  <span className="text-lg font-semibold tracking-wider">rushjivrajani48@gmail.com</span>
+                  <span className="text-base font-semibold tracking-wider">rushjivrajani48@gmail.com</span>
                 </a>
                 
                 <div className="flex items-center gap-6 text-[#475569] group/item hover:text-[#009ca6] transition-colors cursor-default">
                   <div className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-md border border-white flex items-center justify-center group-hover/item:border-[#009ca6]/30 shadow-sm transition-all group-hover/item:scale-105">
                     <Phone className="w-6 h-6 text-[#009ca6]" />
                   </div>
-                  <span className="text-lg font-semibold tracking-wider">+91 90995 38086</span>
+                  <span className="text-base font-semibold tracking-wider">+91 90995 38086</span>
                 </div>
                 
                 <div className="flex items-center gap-6 text-[#475569] group/item hover:text-[#009ca6] transition-colors cursor-default">
                   <div className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-md border border-white flex items-center justify-center group-hover/item:border-[#009ca6]/30 shadow-sm transition-all group-hover/item:scale-105">
                     <MapPin className="w-6 h-6 text-[#009ca6]" />
                   </div>
-                  <span className="text-lg font-semibold tracking-wider">Ahmedabad, Gujarat</span>
+                  <span className="text-base font-semibold tracking-wider">Ahmedabad, Gujarat</span>
                 </div>
               </div>
             </div>

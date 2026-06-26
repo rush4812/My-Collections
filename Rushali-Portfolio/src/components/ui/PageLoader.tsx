@@ -28,7 +28,7 @@ export default function PageLoader() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-bold text-[#0B253D]"
+            className="text-3xl md:text-5xl font-bold text-[#0B253D]"
           >
             Rushali Jivrajani
           </motion.div>

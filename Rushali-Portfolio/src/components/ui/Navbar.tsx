@@ -36,10 +36,10 @@ export default function Navbar() {
         scrolled ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100" : "bg-transparent"
       )}
     >
-      <div className="flex items-center gap-2 cursor-pointer max-w-7xl mx-auto w-full justify-between">
+      <div className="flex items-center gap-2 cursor-pointer max-w-6xl mx-auto w-full justify-between">
         <div className="flex items-center gap-2">
           {/* Montor-style script/elegant logo approach */}
-          <div className="text-3xl font-black tracking-tight flex gap-1">
+          <div className="text-2xl font-black tracking-tight flex gap-1">
             <span className="text-[#009ca6] italic pr-1">Rushali Jivrajani</span>
           </div>
         </div>

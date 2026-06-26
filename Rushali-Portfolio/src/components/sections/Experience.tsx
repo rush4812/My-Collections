@@ -24,12 +24,10 @@ const experiences = [
     duration: "2022 – 2023",
     location: "Rajkot, Gujarat",
     description: [
-      "Developed modern web applications using React.js, Node.js, Express.js, and MongoDB.",
-      "Created reusable UI components and responsive layouts using Tailwind CSS and Bootstrap.",
-      "Implemented CRUD operations, third-party API integrations, and database-driven features.",
-      "Worked closely with designers and developers to deliver user-centric solutions.",
-      "Managed source code using Git and GitHub, following industry-standard development practices.",
-      "Maintained clean, efficient, and scalable code throughout the development lifecycle."
+      "Built reusable UI components using React.js for client-facing applications",
+      "Implemented CRUD operations and integrated REST APIs to connect frontend with backend services",
+      "Contributed to frontend feature development across multiple live production projects",
+      "Collaborated with senior developers to learn production workflows, code review practices, and team-based delivery"
     ],
   },
 ];
@@ -38,8 +36,8 @@ export default function Experience() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="experience" className="py-8 md:py-12 px-6 relative overflow-hidden border-t border-white/40 bg-white/20">
-      <div className="container relative z-10 max-w-5xl mx-auto">
+    <section id="experience" className="py-8 md:py-12 relative overflow-hidden border-t border-white/40 bg-white/20">
+      <div className="container relative z-10 max-w-5xl mx-auto px-6">
 
         <div className="flex flex-col items-center mb-8 md:mb-12 text-center">
           <motion.h2
@@ -47,7 +45,7 @@ export default function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]"
+            className="text-3xl md:text-4xl font-bold mb-4 text-[#0B253D]"
           >
             Experience
           </motion.h2>
@@ -77,7 +75,7 @@ export default function Experience() {
                       : "text-slate-500 hover:text-[#0B253D] bg-white/30 hover:bg-white/50 backdrop-blur-sm border border-white/40 shadow-sm"}
                   `}
                 >
-                  <span className="relative z-10 block text-[15px] md:text-lg font-bold">{exp.company}</span>
+                  <span className="relative z-10 block text-[15px] md:text-base font-bold">{exp.company}</span>
                 </button>
               );
             })}
@@ -96,8 +94,8 @@ export default function Experience() {
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-[#0B253D]">{experiences[activeTab].role}</h3>
-                    <h4 className="text-lg font-semibold text-[#009ca6] mt-1">@ {experiences[activeTab].company}</h4>
+                    <h3 className="text-xl font-bold text-[#0B253D]">{experiences[activeTab].role}</h3>
+                    <h4 className="text-base font-semibold text-[#009ca6] mt-1">@ {experiences[activeTab].company}</h4>
                   </div>
                   <span className="inline-block px-4 py-1.5 rounded-full bg-slate-100 text-[#009ca6] text-xs font-bold tracking-widest uppercase shadow-sm whitespace-nowrap h-fit">
                     {experiences[activeTab].duration}

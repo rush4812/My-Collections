@@ -16,11 +16,11 @@ export default function About() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   return (
-    <section id="about" ref={containerRef} className="py-8 md:py-12 px-4 md:px-6 relative overflow-hidden border-t border-white/40 bg-white/20">
+    <section id="about" ref={containerRef} className="py-8 md:py-12 relative overflow-hidden border-t border-white/40 bg-white/20">
       
-      <motion.div style={{ opacity }} className="container relative z-10 max-w-7xl mx-auto">
+      <motion.div style={{ opacity }} className="container relative z-10 max-w-6xl mx-auto px-6">
         <div className="flex flex-col items-center mb-8 md:mb-12 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0B253D]">
             About Me
           </h2>
           <div className="h-[2px] w-20 bg-[#009ca6] rounded-full" />
@@ -49,22 +49,22 @@ export default function About() {
             {/* Subtle glow behind text */}
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#009ca6] opacity-10 blur-3xl rounded-full" />
             
-            <h3 className="text-2xl md:text-3xl font-bold text-[#0B253D] mb-6 leading-tight relative z-10">
+            <h3 className="text-xl md:text-2xl font-bold text-[#0B253D] mb-6 leading-tight relative z-10">
               Building High-Quality Web Applications
             </h3>
-            <p className="text-[#475569] text-lg leading-relaxed mb-6 relative z-10 font-medium">
-              I am a Software Developer who loves building fast, responsive, and full-stack web applications. With deep expertise in the <span className="text-[#009ca6] font-bold">MERN Stack, Next.js, Vue.js, PHP ecosystems (Laravel, CodeIgniter), and modern AI development tools</span>, I transform ideas into scalable digital solutions.
+            <p className="text-[#475569] text-base leading-relaxed mb-6 relative z-10 font-medium">
+              Software Developer with 2+ years of experience building production web applications across the <span className="text-[#009ca6] font-bold">MERN stack, Next.js, and Vue.js.</span> I also work with PHP ecosystems (Laravel, CodeIgniter) and use modern AI tools to ship clean, scalable code faster.
             </p>
-            <p className="text-[#475569] text-lg leading-relaxed mb-8 relative z-10 font-medium">
+            <p className="text-[#475569] text-base leading-relaxed mb-8 relative z-10 font-medium">
               Along with writing clean code, I use AI tools like Cursor and GitHub Copilot to work faster. I focus on creating great user experiences with modern technologies.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 relative z-10">
               <div className="flex flex-col">
-                <span className="text-4xl font-black text-[#009ca6] mb-1 drop-shadow-sm">2+</span>
+                <span className="text-3xl font-black text-[#009ca6] mb-1 drop-shadow-sm">2+</span>
                 <span className="text-sm font-bold text-[#0B253D] uppercase tracking-wider">Years Experience</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-4xl font-black text-[#009ca6] mb-1 drop-shadow-sm">10+</span>
+                <span className="text-3xl font-black text-[#009ca6] mb-1 drop-shadow-sm">10+</span>
                 <span className="text-sm font-bold text-[#0B253D] uppercase tracking-wider">Projects Delivered</span>
               </div>
             </div>

@@ -36,9 +36,9 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-8 md:py-12 px-4 md:px-6 relative overflow-hidden border-t border-[#0B253D]/5 bg-[#f4f7fb]/20">
+    <section id="skills" className="py-8 md:py-12 relative overflow-hidden border-t border-[#0B253D]/5 bg-[#f4f7fb]/20">
 
-      <div className="container relative z-10 max-w-7xl mx-auto">
+      <div className="container relative z-10 max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,11 +46,11 @@ export default function Skills() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center mb-8 md:mb-12 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0B253D]">
             My Skills
           </h2>
           <div className="h-[2px] w-20 bg-[#009ca6] rounded-full mb-6" />
-          <p className="text-[#475569] max-w-2xl text-lg font-medium">
+          <p className="text-[#475569] max-w-2xl text-base font-medium">
             The tools and technologies I use to build web applications.
           </p>
         </motion.div>
@@ -68,7 +68,7 @@ export default function Skills() {
                 {/* Glass subtle highlight */}
                 <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
                 
-                <h3 className="text-xl font-bold text-[#0B253D] mb-8 uppercase tracking-widest flex items-center gap-3 relative z-10">
+                <h3 className="text-lg font-bold text-[#0B253D] mb-8 uppercase tracking-widest flex items-center gap-3 relative z-10">
                   <span className={`w-3 h-3 rounded-full bg-gradient-to-r ${skillGroup.color} shadow-sm`} />
                   {skillGroup.category}
                 </h3>

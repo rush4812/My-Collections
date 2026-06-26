@@ -50,7 +50,7 @@ function ProjectCard({ project }: { project: { name: string; description: string
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className="relative w-full h-[500px] bg-white/60 backdrop-blur-md rounded-3xl p-8 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow flex flex-col group overflow-hidden"
+      className="relative w-full h-auto min-h-[480px] lg:h-[500px] bg-white/60 backdrop-blur-md rounded-3xl p-8 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow flex flex-col group overflow-hidden"
     >
       <div style={{ transform: "translateZ(30px)" }} className="relative h-[220px] mb-8 rounded-2xl overflow-hidden shadow-inner group-hover:shadow-[0_0_20px_rgba(0,156,166,0.2)] transition-shadow duration-500">
         <Image 
@@ -61,7 +61,7 @@ function ProjectCard({ project }: { project: { name: string; description: string
         />
         <div className="absolute inset-0 bg-[#0B253D]/20 group-hover:bg-transparent transition-colors duration-500" />
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/20 backdrop-blur-sm">
-          <span className="text-3xl font-black uppercase tracking-widest text-center px-4 leading-tight text-white drop-shadow-md">
+          <span className="text-2xl font-black uppercase tracking-widest text-center px-4 leading-tight text-white drop-shadow-md">
             {project.name}
           </span>
         </div>
@@ -69,7 +69,7 @@ function ProjectCard({ project }: { project: { name: string; description: string
 
       <div style={{ transform: "translateZ(40px)" }} className="relative z-10">
         <div className="text-xs font-bold text-[#009ca6] mb-3 tracking-widest uppercase">{project.type}</div>
-        <h3 className="text-2xl font-bold text-[#0B253D] mb-4 uppercase tracking-wider">{project.name}</h3>
+        <h3 className="text-xl font-bold text-[#0B253D] mb-4 uppercase tracking-wider">{project.name}</h3>
         <p className="text-[#475569] text-sm leading-relaxed mb-8 font-medium">{project.description}</p>
         
         <div className="flex gap-4">
@@ -89,10 +89,10 @@ function ProjectCard({ project }: { project: { name: string; description: string
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-8 md:py-12 px-4 md:px-6 relative overflow-hidden border-t border-[#0B253D]/5 bg-[#f4f7fb]/20">
+    <section id="projects" className="py-8 md:py-12 relative overflow-hidden border-t border-[#0B253D]/5 bg-[#f4f7fb]/20">
 
 
-      <div className="container relative z-10 max-w-7xl mx-auto">
+      <div className="container relative z-10 max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -100,11 +100,11 @@ export default function Projects() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center mb-8 md:mb-12 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B253D]">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0B253D]">
             Projects
           </h2>
           <div className="h-[2px] w-20 bg-[#009ca6] rounded-full mb-6" />
-          <p className="text-[#475569] max-w-2xl text-center text-lg font-medium">
+          <p className="text-[#475569] max-w-2xl text-center text-base font-medium">
             Some of the recent projects and websites I have built.
           </p>
         </motion.div>

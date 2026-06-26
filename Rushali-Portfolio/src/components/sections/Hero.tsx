@@ -21,7 +21,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-transparent">
       
-      <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6">
+      <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto px-6">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -32,12 +32,12 @@ export default function Hero() {
             AVAILABLE FOR HIRE
           </motion.div>
 
-          <motion.h1 variants={childVariants} className="text-5xl sm:text-7xl lg:text-7xl font-bold tracking-tight mb-6 text-[#0B253D] leading-tight">
+          <motion.h1 variants={childVariants} className="text-4xl sm:text-6xl lg:text-6xl font-bold tracking-tight mb-6 text-[#0B253D] leading-tight">
             Hi, I am <br />
             <span className="text-[#009ca6]">Rushali</span> Jivrajani
           </motion.h1>
 
-          <motion.p variants={childVariants} className="text-[#788998] text-lg sm:text-xl max-w-lg mb-10 leading-relaxed font-medium">
+          <motion.p variants={childVariants} className="text-[#788998] text-base sm:text-lg max-w-lg mb-10 leading-relaxed font-medium">
             I am a Software Developer and MERN Stack Expert. I build responsive web applications and use AI tools to work efficiently.
           </motion.p>
 
@@ -57,7 +57,7 @@ export default function Hero() {
             <a href="https://github.com/rush4812" target="_blank" className="text-[#0B253D] hover:text-[#009ca6] transition-colors">
               <FaGithub className="w-6 h-6" />
             </a>
-            <a href="https://linkedin.com" target="_blank" className="text-[#0B253D] hover:text-[#009ca6] transition-colors">
+            <a href="https://linkedin.com/in/rushali-jivrajani-448201202" target="_blank" className="text-[#0B253D] hover:text-[#009ca6] transition-colors">
               <FaLinkedin className="w-6 h-6" />
             </a>
             <a href="mailto:rushjivrajani48@gmail.com" className="text-[#0B253D] hover:text-[#009ca6] transition-colors">
@@ -66,17 +66,17 @@ export default function Hero() {
           </motion.div>
         </motion.div>
         
-        <div className="hidden lg:flex items-center justify-center relative z-10">
+        <div className="flex items-center justify-center relative z-10 mt-8 lg:mt-0 lg:order-last">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-            className="relative w-[400px] h-[400px] rounded-full overflow-hidden border-8 border-white shadow-2xl"
+            className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden border-4 lg:border-8 border-white shadow-2xl"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
-              src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-              alt="Human Placeholder (Swap with your photo)" 
+              src="/profile.jpg" 
+              alt="Rushali Jivrajani Profile Photo" 
               className="w-full h-full object-cover"
             />
           </motion.div>
