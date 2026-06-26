@@ -32,7 +32,7 @@ export default function Hero() {
             AVAILABLE FOR HIRE
           </motion.div>
 
-          <motion.h1 variants={childVariants} className="text-4xl sm:text-6xl lg:text-6xl font-bold tracking-tight mb-6 text-[#0B253D] leading-tight">
+          <motion.h1 variants={childVariants} className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight mb-6 text-[#0B253D] leading-tight">
             Hi, I am <br />
             <span className="text-[#009ca6]">Rushali</span> Jivrajani
           </motion.h1>
